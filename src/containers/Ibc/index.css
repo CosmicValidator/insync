@@ -1,0 +1,220 @@
+.ibc .card {
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.ibc .card .left_content {
+    margin-bottom: 10px;
+}
+
+.ibc .card h2 {
+    font-family: 'Blinker', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 130%;
+    margin: 0 0 10px;
+}
+
+.ibc > div .connect_button {
+    background: #222222;
+    border-radius: 10px;
+    /*width: 100%;*/
+    font-family: 'Blinker', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: #FFFFFF;
+    padding: 14px;
+    box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
+    text-transform: unset;
+    min-width: 240px;
+    width: max-content;
+}
+
+.ibc > div > .connect_button:hover {
+    background: #222222;
+}
+
+.ibc > div > .connect_button:hover:before {
+    content: "";
+    position: absolute;
+    background: #222222;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.ibc > div > .connect_button:hover:after {
+    content: "";
+    background: linear-gradient(112.4deg,#2fcdcf 14.6%,#966afb 82.44%);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -2;
+    border-radius: 10px;
+}
+
+.ibc > div > .connect_button > span:first-child {
+    justify-content: flex-start;
+}
+
+.ibc > div > .connect_button img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.ibc .address_info {
+    display: flex;
+    align-items: center;
+}
+
+.ibc .select_fields {
+    background: linear-gradient(
+            91.04deg, rgba(0, 0, 0, 0.3) -2.67%, rgba(0, 0, 0, 0.228) 48.93%, rgba(0, 0, 0, 0.3) 99.58%);
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.ibc .divider {
+    width: 2px;
+    height: 20px;
+    background: #fff;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.ibc .disconnect_button {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(240, 231, 231, 0.5544) 100%);
+    box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
+    color: #000000;
+    border-radius: 50px;
+    font-family: 'Blinker', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    padding: 10px 20px;
+    text-transform: unset;
+}
+
+.ibc .disconnect_button:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(240, 231, 231, 0.5544) 100%);
+}
+
+.ibc .disconnect_button .circular_progress {
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.ibc .select_fields .copy_button {
+    width: max-content;
+    background: rgba(255, 255, 255, 0.3);
+    color: #000000;
+    border-radius: 50px;
+    font-family: 'Blinker', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    padding: 0 20px;
+    text-transform: unset;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.ibc .select_field > div > div {
+    font-size: 20px;
+}
+
+.ibc .select_fields .copy_button > span:first-child {
+    margin-bottom: 2px;
+}
+
+.ibc .text_field_content {
+    width: 50%;
+    margin-top: 50px;
+}
+
+.ibc .text_field_content > p {
+    font-family: 'Blinker', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+}
+
+.ibc .text_field {
+    margin: unset;
+}
+
+.ibc .text_field > div {
+    height: 50px;
+}
+
+.ibc .text_field input {
+    color: #000000;
+}
+
+.ibc .text_field fieldset {
+    border-color: #000000 !important;
+}
+
+.ibc .available_tokens {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ibc .available_tokens .heading {
+    font-family: 'Blinker', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    margin-right: 20px;
+}
+
+.ibc .available_tokens .value {
+    font-family: 'Blinker', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.ibc .footer .submit_button {
+    background: #0088CC;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    font-family: 'Blinker', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    margin-top: 50px;
+}
+
+/*.ibc .footer button {*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+.ibc .footer .submit_button:disabled {
+    opacity: 0.5;
+}

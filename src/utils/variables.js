@@ -34,6 +34,7 @@ const variables = {
         stake: 'Stake',
         vote: 'Vote',
         proposals: 'Proposals',
+        ibc: 'IBC',
         stake_tokens: 'Stake Tokens',
         delegate: 'Delegate',
         un_delegate: 'Undelegate',
@@ -73,6 +74,9 @@ const variables = {
         multi_delegate: 'Multi Delegate',
         number_of_validators: 'Number of Validators',
         tokens_to_each: 'Tokens to each',
+
+        cosmos_ibc_transfer: 'Cosmos IBC Transfer',
+        submit: 'Submit',
     },
 };
 

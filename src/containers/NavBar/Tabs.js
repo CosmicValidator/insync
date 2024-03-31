@@ -20,7 +20,7 @@ class Tabs extends Component {
         const route = this.props.router && this.props.router.location && this.props.router.location.pathname &&
             this.props.router.location.pathname.split('/') && this.props.router.location.pathname.split('/')[1];
 
-        if (this.state.value !== route && (route === '' || route === 'stake' || route === 'proposals')) {
+        if (this.state.value !== route && (route === '' || route === 'stake' || route === 'proposals' || route === 'ibc')) {
             this.setState({
                 value: route,
             });
@@ -79,12 +79,18 @@ class Tabs extends Component {
                         value="stake"
                         onClick={() => this.handleChange('stake')}
                         {...a11yProps(1)} />
+                    {/* <Tab */}
+                    {/*     className={'tab ' + (this.state.value === 'proposals' ? 'active_tab' : '')} */}
+                    {/*     label={variables[this.props.lang].proposals} */}
+                    {/*     value="proposals" */}
+                    {/*     onClick={() => this.handleChange('proposals')} */}
+                    {/*     {...a11yProps(1)} /> */}
                     <Tab
-                        className={'tab ' + (this.state.value === 'proposals' ? 'active_tab' : '')}
-                        label={variables[this.props.lang].proposals}
-                        value="proposals"
-                        onClick={() => this.handleChange('proposals')}
-                        {...a11yProps(1)} />
+                        className={'tab ' + (this.state.value === 'ibc' ? 'active_tab' : '')}
+                        label={variables[this.props.lang].ibc}
+                        value="ibc"
+                        onClick={() => this.handleChange('ibc')}
+                        {...a11yProps(2)} />
                 </div>
             </AppBar>
         );

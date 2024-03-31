@@ -150,7 +150,7 @@ class Table extends Component {
                     }
 
                     return (
-                        this.props.delegations.find((item) =>
+                        value && this.props.delegations.find((item) =>
                             (item && item.length && item[1]) === value.nam_address)
                             ? <div className="actions">
                                 {/* <ReDelegateButton valAddress={validatorAddress}/> */}

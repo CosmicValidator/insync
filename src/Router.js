@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './containers/Home';
 import Stake from './containers/Stake';
 import Proposals from './containers/Proposals';
+import Ibc from './containers/Ibc';
 import ProposalDialog from './containers/Proposals/ProposalDialog';
 
 const routes = [{
@@ -14,6 +15,9 @@ const routes = [{
 }, {
     path: '/proposals',
     component: Proposals,
+}, {
+    path: '/ibc',
+    component: Ibc,
 }, {
     path: '/proposals/:proposalID',
     component: ProposalDialog,

@@ -1,6 +1,6 @@
 import { REST_URL, RPC_URL } from './constants/url';
 import { SigningStargateClient } from '@cosmjs/stargate';
-import { config } from './config';
+import { config, cosmosConfig } from './config';
 import { cosmos, InstallError } from '@cosmostation/extension-client';
 import { getOfflineSigner } from '@cosmostation/cosmos-client';
 // import { Sdk } from '@namada/shared';
@@ -14,13 +14,13 @@ import { getOfflineSigner } from '@cosmostation/cosmos-client';
 //     TxMsgValue,
 // } from '@namada/types';
 
-const chainId = config.CHAIN_ID;
-const chainName = config.CHAIN_NAME;
-const coinDenom = config.COIN_DENOM;
-const coinMinimalDenom = config.COIN_MINIMAL_DENOM;
-const coinDecimals = config.COIN_DECIMALS;
-const prefix = config.PREFIX;
-const coinGeckoId = config.COINGECKO_ID;
+const chainId = cosmosConfig.CHAIN_ID;
+const chainName = cosmosConfig.CHAIN_NAME;
+const coinDenom = cosmosConfig.COIN_DENOM;
+const coinMinimalDenom = cosmosConfig.COIN_MINIMAL_DENOM;
+const coinDecimals = cosmosConfig.COIN_DECIMALS;
+const prefix = cosmosConfig.PREFIX;
+const coinGeckoId = cosmosConfig.COINGECKO_ID;
 
 const chainConfig = {
     chainId: chainId,
@@ -258,7 +258,7 @@ export const sentTransaction = (tx, txs, address, type, cb) => {
             const client = namada && namada.getSigner();
 
             console.log('000', client, tx, txs, type);
-            await client.submitTransfer(tx, txs, type)
+            await client.submitIbcTransfer(tx, txs, type)
                 .then(() => {
                     console.log('Transaction was approved by user and submitted via the SDK');
                     // console.log('11111', result);

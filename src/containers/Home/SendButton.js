@@ -24,6 +24,23 @@ const SendButton = (props) => {
             nativeToken: 'NAAN',
         };
 
+        // const tx = {
+        //     source: props.address,
+        //     receiver: 'tnam1qqrhwfj678xq07nfwmmxkvjgzzdr9ywamqqjn88x',
+        //     token: {
+        //         // symbol: string,
+        //         // type: number,
+        //         // path: number,
+        //         // coin: string,
+        //         // url: string,
+        //         address: config.TOKEN_ADDRESS,
+        //     },
+        //     amount: new BigNumber(1),
+        //     portId: 'flixnet-4',
+        //     channelId: 'namada',
+        //     // nativeToken: 'NAAN',
+        // };
+
         const txs = {
             token: config.TOKEN_ADDRESS,
             feeAmount: new BigNumber(0.000100),

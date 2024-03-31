@@ -1,4 +1,4 @@
-import BigNumber from "bignumber.js";
+import BigNumber from 'bignumber.js';
 export var BigNumberSerializer = {
     serialize: function (value, writer) {
         writer.string(value.toString());

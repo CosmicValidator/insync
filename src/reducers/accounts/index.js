@@ -5,9 +5,14 @@ import {
     BALANCE_FETCH_ERROR,
     BALANCE_FETCH_IN_PROGRESS,
     BALANCE_FETCH_SUCCESS,
+    COSMOS_ACCOUNT_ADDRESS_SET,
+    COSMOS_BALANCE_FETCH_ERROR,
+    COSMOS_BALANCE_FETCH_IN_PROGRESS,
+    COSMOS_BALANCE_FETCH_SUCCESS,
     DELEGATIONS_FETCH_ERROR,
     DELEGATIONS_FETCH_IN_PROGRESS,
     DELEGATIONS_FETCH_SUCCESS,
+    DISCONNECT_COSMOS_SET,
     DISCONNECT_SET,
     REWARDS_FETCH_ERROR,
     REWARDS_FETCH_IN_PROGRESS,
@@ -25,6 +30,7 @@ import {
 
 const address = (state = {
     value: '',
+    cosmosAddress: '',
     details: {},
 }, action) => {
     switch (action.type) {
@@ -32,6 +38,11 @@ const address = (state = {
         return {
             ...state,
             value: action.value,
+        };
+    case COSMOS_ACCOUNT_ADDRESS_SET:
+        return {
+            ...state,
+            cosmosAddress: action.value,
         };
     case ACCOUNT_DETAILS_SET:
         return {
@@ -42,6 +53,11 @@ const address = (state = {
         return {
             ...state,
             value: '',
+        };
+    case DISCONNECT_COSMOS_SET:
+        return {
+            ...state,
+            cosmosAddress: '',
         };
 
     default:
@@ -82,10 +98,12 @@ const delegations = (state = {
 
 const balance = (state = {
     result: [],
+    cosmos: [],
     inProgress: false,
 }, action) => {
     switch (action.type) {
     case BALANCE_FETCH_IN_PROGRESS:
+    case COSMOS_BALANCE_FETCH_IN_PROGRESS:
         return {
             ...state,
             inProgress: true,
@@ -96,7 +114,14 @@ const balance = (state = {
             inProgress: false,
             result: action.value,
         };
+    case COSMOS_BALANCE_FETCH_SUCCESS:
+        return {
+            ...state,
+            inProgress: false,
+            cosmos: action.value,
+        };
     case BALANCE_FETCH_ERROR:
+    case COSMOS_BALANCE_FETCH_ERROR:
         return {
             ...state,
             inProgress: false,
@@ -105,6 +130,11 @@ const balance = (state = {
         return {
             ...state,
             result: [],
+        };
+    case DISCONNECT_COSMOS_SET:
+        return {
+            ...state,
+            cosmos: [],
         };
     default:
         return state;
